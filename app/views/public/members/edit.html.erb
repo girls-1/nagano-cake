@@ -1,0 +1,57 @@
+<div class='container'>
+<div class="row">
+  <div class="col-xs-12">
+    <h4 class="my-4 ribbon1">登録情報編集</h4>
+
+    <% if @member.errors.any? %>
+     <div class="notification is-danger">
+      <h2><%= pluralize(@member.errors.count, "error") %>件のエラーが発生しました</h2>
+       <ul>
+        <% @member.errors.full_messages.each do |message| %>
+         <li><%= message %></li>
+        <% end %>
+      </ul>
+     </div>
+　　<% end %>
+    <%= form_with model:@member, url:members_path, local:true do |f| %>
+
+      <div class="col-xs-12">
+        <div class="form-group col-xs-12">
+          <%= f.label :"氏名", class: "col-sm-4 control-label" %>
+          <%= f.text_field :last_name, class: "last_name col-sm-3 form-control-static name" %>
+          <%= f.text_field :first_name, class: "first_name col-sm-3 form-control-static name" %>
+        </div>
+        <div class="form-group col-xs-12">
+          <%= f.label :"フリガナ", class: "col-sm-4 control-label" %>
+          <%= f.text_field :last_name_kana, class: "kana_last_name col-sm-3 form-control-static name" %>
+          <%= f.text_field :first_name_kana, class: "kana_first_name col-sm-3 form-control-static name" %>
+        </div>
+        <div class="form-group col-xs-12">
+          <%= f.label :"郵便番号", class: "col-sm-4 control-label" %>
+          <%= f.text_field :post_code, class: "col-sm-5 form-control-static" %>
+        </div>
+        <div class="form-group col-xs-12">
+          <%= f.label :"住所", class: "col-sm-4 control-label" %>
+          <%= f.text_field :address, class: "col-sm-7 form-control-static" %>
+        </div>
+        <div class="form-group col-xs-12">
+          <%= f.label :"電話番号", class: "col-sm-4 control-label" %>
+          <%= f.text_field :phone_number, class: "col-sm-5 form-control-static" %>
+        </div>
+        <div class="form-group col-xs-12">
+          <%= f.label :"メールアドレス", class: "col-sm-4 control-label" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-sm-6 form-control-static" %>
+        </div>
+      </div>
+
+      <div class="actions col-xs-9">
+        <div class="btn-group my-4" >
+          <%= f.submit "編集内容を保存する", class: "btn btn_primary save col-xs-4" %>
+        </div>
+        <div class="text-right">
+          <%= link_to '退会する', members_out_path, class: "btn btn_danger out col-auto ml-auto"%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

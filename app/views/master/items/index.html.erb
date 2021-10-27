@@ -1,0 +1,43 @@
+<div class = "contener my-3" >
+  <div class = "row" >
+    <div class = "col-8 mx-auto" >
+      <h4>商品一覧</h4>
+      <h2 class = "text-right"><%= link_to '⊕', new_master_item_path %></h4>
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class = "text-left">商品ID</th>
+            <th class = "text-left">商品名</th>
+            <th class = "text-left">税抜価格</th>
+            <th class = "text-left">ジャンル</th>
+            <th class = "text-left">ステータス</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @items.each do |item| %>
+          <tr>
+            <td></td>
+            <td class = "text-left"><%= item.id %></td>
+            <td class = "text-left">
+              <%= link_to master_item_path(item.id) do %>
+              <%= item.name %>
+              <% end %>
+            </td>
+            <td class = "text-left"><%= (item.price).floor.to_s(:delimited) %></td>
+            <td class = "text-left"><%= item.genre.name %></td>
+            <td class = "text-leftr">
+              <% if item.sales_status == true %>
+                <div class = text-success><strong><%= "販売中" %></strong></div>
+              <% else %>
+                <div class = text-danger><strong><%= "販売停止中" %></strong></div>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<%= paginate @items %>

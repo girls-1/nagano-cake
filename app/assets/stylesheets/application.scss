@@ -1,0 +1,288 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap";
+ @import 'font-awesome-sprockets';
+ @import 'font-awesome';
+
+
+ * {
+   margin: 0;
+   padding: 0;
+   font-family: 'Shippori Mincho', serif;
+ }
+
+ .link {
+  text-decoration: none;
+  list-style: none;
+  color: gray ;
+ }
+
+ .container-fluid{
+  width: 80%;
+ }
+
+.homes_top {
+ position: relative;
+}
+
+.homes_top p {
+ position: absolute;
+ width: 100%;
+ top: calc(40% - 25px);
+ text-align: center;
+}
+
+.homes_top img {
+ width: 100% ;
+}
+
+.about{
+ font-size: 80px;
+}
+
+.item-link {
+ margin-left: auto;
+}
+
+.pagination {
+  justify-content: center;
+}
+
+.button_custom {
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.detail {
+  font-size: 20px;
+}
+
+.field_with_errors {
+  display: contents;
+}
+
+.btn-social-icon-instagram {
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  color: #2e6ca5;
+  font-size: 25px;
+  text-decoration: none;
+}
+
+.btn-social-icon-instagram__square {
+  border-radius: 13px;
+  position: relative;
+  display: inline-block;
+  width: 40px;  //ボタンの背景の大きさ
+  height: 40px;
+  font-size: 35px;
+  line-height: 50px;
+  background: linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+  overflow: hidden
+}
+
+.btn-social-icon-instagram__square:before {
+  content: '';
+  position: absolute;
+  top: 23px;
+  left: -18px;
+  width: 60px;
+  height: 60px;
+  background: -webkit-radial-gradient(#ffdb2c 10%, rgba(255, 105, 34, 0.65) 55%, rgba(255, 88, 96, 0) 70%);
+  background: radial-gradient(#ffdb2c 10%, rgba(255, 105, 34, 0.65) 55%, rgba(255, 88, 96, 0) 70%);
+}
+
+.btn-social-icon-instagram__square .fa-instagram {
+  color:white;
+  line-height: 50px;
+  position: relative;
+  z-index: 2;
+  top: 43%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+}
+
+.search {
+ position: relative;
+ background-color: #fff;
+ border: 1px solid #aaa;
+}
+
+.search_form {
+ padding:8px 0 8px 8px;
+ border:none;
+}
+
+.btn {
+    // appearance: none;
+    // margin: 0;
+    // padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    outline: none;
+}
+
+.btn_success {
+ position: relative;
+ padding: 10px;
+ width: em;
+ font-size: 14px;
+ background-color: gray;
+ color: #fff;
+ line-height   : 1em;
+}
+
+.btn_primary {
+ position: relative;
+ padding: 10px;
+ width: em;
+ font-size: 14px;
+ background-color: #fff;
+ color: gray;
+ line-height   : 1em;
+ border: 1px solid;
+}
+
+.btn_danger {
+ position: relative;
+ padding: 10px;
+ width: em;
+ font-size: 14px;
+ background-color: #B22222;
+ color: #fff;
+ line-height   : 1em;
+}
+
+.btn-social-icon-twitter {
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  color: #1da1f3;
+  font-size: 25px;
+  text-decoration: none;
+}
+
+.btn-social-icon-twitter:hover {
+  color:#88daff;
+  transition: .5s;
+}
+
+.btn-social-icon-twitter__square {
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  font-size: 35px;
+  line-height: 50px;
+  color: #FFF;
+  background: #1da1f3;
+}
+
+.btn-social-icon-twitter__square i {
+  color:white;
+  line-height: 50px;
+  position: relative;
+  z-index: 2;
+  top: 43%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+}
+
+.text-background-test01 {
+  color: #666666;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4em;
+  padding: 5px;
+  background-color:rgba(255,255,255,0.5);
+}
+
+.ribbon1 {
+  display: inline-block;
+  position: relative;
+  height: 50px;/*リボンの高さ*/
+  line-height: 50px;/*リボンの高さ*/
+  text-align: center;
+  padding: 0 30px;/*横の大きさ*/
+  font-size: 18px;/*文字の大きさ*/
+  background: #f57a78;/*塗りつぶし色*/
+  color: #FFF;/*文字色*/
+  box-sizing: border-box;
+}
+
+.ribbon1:before, .ribbon1:after {
+  position: absolute;
+  content: '';
+  width: 0px;
+  height: 0px;
+  z-index: 1;
+}
+
+.ribbon1:before {
+  top: 0;
+  left: 0;
+  border-width: 25px 0px 25px 15px;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+}
+
+.ribbon1:after {
+  top: 0;
+  right: 0;
+  border-width: 25px 15px 25px 0px;
+  border-color: transparent #fff transparent transparent;
+  border-style: solid;
+}
+
+.carousel-item {
+  height: 400px;
+
+}
+
+.carousel img {
+  position: absolute;
+  width: 100%;
+}
+
+.pagination>li>a {
+  border: none;     /*枠線をなくす*/
+  color: #696969;   /*文字の色を変える*/
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {
+  background-color: #808080 !important;    /*背景の色を変える*/
+  border-radius: 15px !important;    /*角を丸くする*/
+}
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {
+  border-radius: 15px !important;  /*角を丸くする*/
+}
+

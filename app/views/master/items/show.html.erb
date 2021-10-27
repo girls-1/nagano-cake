@@ -1,0 +1,56 @@
+<div class="container my-3">
+  <div class="row-md-3">
+    <h4>商品詳細</h4>
+  </div>
+
+    <div class="row my-3">
+
+        <div class="col-md-3">
+          <%= attachment_image_tag(@item, :image, :fill, 200, 200) %>
+        </div>
+          <div class="col-md-5">
+    	      <table class="table table-borderless">
+    		        <tr>
+                  <td>商品名</td>
+                  <td class="detail"><%= @item.name %></td>
+                </tr>
+
+                <tr>
+                  <td>商品説明</td>
+                  <td class="detail"><%= @item.description %></td>
+                </tr>
+
+                <tr>
+                  <td>ジャンル</td>
+                  <td class="detail"><%= @item.genre.name %></td>
+                </tr>
+
+
+                <tr>
+                  <td>税込価格(税抜価格)</td>
+                  <td class="detail">
+                     <%=@item.taxin_price.floor.to_s(:delimited) %>(<%= @item.price.to_s(:delimited) %>)円
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>販売ステータス</td>
+                  <td class="detail">
+                    <!--販売ステータスカラムが default: true のため trueを記入-->
+                  <% if @item.sales_status == true %>
+                    <div class="text-success"><strong><%= "販売中" %></strong></div>
+                  <% else %>
+                    <div class="text-danger"><strong><%= "販売停止中" %></strong></div>
+                  <% end %>
+                  </td>
+                </tr>
+            </table>
+            <div class="row-6">
+            <div class="text-center" >
+              <td><%= link_to '編集', edit_master_item_path(@item), class: "button_custom btn btn_success center-block col-4" %>
+            </div>
+            </div>
+          </div>
+     </div>
+</div>
+
